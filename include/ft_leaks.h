@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_leaks.h                                         :+:      :+:    :+:   */
+/*   ft_malloc.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:25:30 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/07 23:53:50 by aderison         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:04:15 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,14 @@ typedef struct s_alloc
 {
     void *ptr;
     size_t size;
-    char *name;
+    const char *name;
     int line;
     struct s_alloc *next;
 } t_alloc;
 
 int	ft_strlen(const char *str);
 int	ft_putstr_fd(const char *str, int fd);
-void	*ft_leaks(size_t size, const char *name, int line);
+void ft_putalloc(t_alloc *ptrs);
+void	*ft_malloc(size_t size, const char *name, int line);
 
 #endif
