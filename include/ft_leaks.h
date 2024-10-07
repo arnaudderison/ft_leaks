@@ -23,6 +23,7 @@
 # define BLUE "\x1B[34m"
 # define RESET "\x1B[0m"
 
+
 typedef struct s_alloc 
 {
     void *ptr;
@@ -32,9 +33,12 @@ typedef struct s_alloc
     struct s_alloc *next;
 } t_alloc;
 
+extern t_alloc *ptrs;
+
 int	ft_strlen(const char *str);
 int	ft_putstr_fd(const char *str, int fd);
-void ft_putalloc(t_alloc *ptrs);
+void ft_putalloc();
 void	*ft_malloc(size_t size, const char *name, int line);
+void ft_free(void *ptr);
 
 #endif

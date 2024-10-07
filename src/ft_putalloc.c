@@ -6,7 +6,7 @@
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:55:46 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/08 01:03:54 by aderison         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:45:29 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,20 @@ static int	ft_putnbr_fd(int nb, int fd)
 	return (len);
 }
 
-void ft_putalloc(t_alloc *ptrs)
+void ft_putalloc()
 {
     t_alloc *tmp;
 
+    if(!ptrs)
+        ft_putstr_fd(BLUE "No malloc\n" RESET, 1);
     tmp = ptrs;
     while (tmp)
     {
         ft_putstr_fd(BLUE "Name: " RESET, 1);
         ft_putstr_fd(tmp->name, 1);
-        ft_putstr_fd(" Line: ", 1);
+        ft_putstr_fd(BLUE " Line: " RESET, 1);
         ft_putnbr_fd(tmp->line, 1);
-        ft_putstr_fd(" ", 1);
+        ft_putstr_fd("\n", 1);
         tmp = tmp->next;
     }
     ft_putstr_fd("\n", 1);

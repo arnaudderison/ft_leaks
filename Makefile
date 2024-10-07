@@ -25,7 +25,7 @@ NC := \033[0m
 FTLEAKS_UTILS = $(addprefix utils/, ft_putstr_fd.c ft_strlen.c)
 
 # ft_leaks
-LEAKS_SRC = ft_leaks.c
+LEAKS_SRC = ft_malloc.c ft_free.c ft_putalloc.c
 
 # ft_leaks sources
 LEAKS = $(addprefix src/, $(FTLEAKS_UTILS) $(LEAKS_SRC))

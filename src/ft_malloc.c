@@ -6,11 +6,13 @@
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:22:07 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/08 01:23:41 by aderison         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:44:36 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_leaks.h"
+
+t_alloc *ptrs = NULL;
 
 static t_alloc *new_alloc(void *ptr, size_t size, const char *name, int line)
 {
@@ -21,7 +23,7 @@ static t_alloc *new_alloc(void *ptr, size_t size, const char *name, int line)
     return new;
 }
 
-static void add_alloc(t_alloc *ptrs, t_alloc *new)
+static void add_alloc(t_alloc *new)
 {
 	t_alloc *tmp;
 
@@ -44,7 +46,6 @@ static void add_alloc(t_alloc *ptrs, t_alloc *new)
 
 void	*ft_malloc(size_t size, const char *name, int line)
 {
-	static t_alloc	ptrs;
 	t_alloc			*new;
 	void *ptr;
 
@@ -64,6 +65,6 @@ void	*ft_malloc(size_t size, const char *name, int line)
 		ptr = NULL;
         return (ft_putstr_fd(RED "➜ New alloc failed\n" RESET, 2), NULL);
     }
-	add_alloc(&ptrs, new);
+	add_alloc(new);
 	return (ptr);
 }
