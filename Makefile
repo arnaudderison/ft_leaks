@@ -22,7 +22,7 @@ CYAN := \033[0;36m
 NC := \033[0m
 
 # ft_leaks utils
-FTLEAKS_UTILS = $(addprefix utils/, ft_putstr_fd.c ft_strlen.c)
+FTLEAKS_UTILS = $(addprefix utils/, fct_putstr_fd.c fct_strlen.c)
 
 # ft_leaks
 LEAKS_SRC = ft_malloc.c ft_free.c ft_putalloc.c

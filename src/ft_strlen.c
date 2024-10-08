@@ -6,13 +6,13 @@
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 22:35:06 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/07 23:04:47 by aderison         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:58:31 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_leaks.h"
 
-int	ft_strlen(const char *str)
+int	fct_strlen(const char *str)
 {
 	int	i;
 

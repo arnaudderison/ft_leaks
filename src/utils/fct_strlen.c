@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   fct_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/07 22:34:47 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/07 23:04:43 by aderison         ###   ########.fr       */
+/*   Created: 2024/10/07 22:35:06 by aderison          #+#    #+#             */
+/*   Updated: 2024/10/07 23:04:47 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_leaks.h"
 
-int	fct_putstr_fd(const char *str, int fd)
+int	fct_strlen(const char *str)
 {
-	return (write(fd, str, fct_strlen(str)));
+	int	i;
+
+	if (!str)
+		return (0);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

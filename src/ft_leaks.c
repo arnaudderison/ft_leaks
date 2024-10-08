@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_malloc.c                                        :+:      :+:    :+:   */
+/*   ft_leaks.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,8 +12,6 @@
 
 #include "ft_leaks.h"
 
-t_alloc *ptrs = NULL;
-
 static t_alloc *new_alloc(void *ptr, size_t size, const char *name, int line)
 {
     t_alloc *new = malloc(sizeof(t_alloc));
@@ -23,7 +21,7 @@ static t_alloc *new_alloc(void *ptr, size_t size, const char *name, int line)
     return new;
 }
 
-static void add_alloc(t_alloc *new)
+static void add_alloc(t_alloc *ptrs, t_alloc *new)
 {
 	t_alloc *tmp;
 
@@ -46,6 +44,7 @@ static void add_alloc(t_alloc *new)
 
 void	*ft_malloc(size_t size, const char *name, int line)
 {
+	static t_alloc	ptrs;
 	t_alloc			*new;
 	void *ptr;
 
@@ -65,6 +64,6 @@ void	*ft_malloc(size_t size, const char *name, int line)
 		ptr = NULL;
         return (fct_putstr_fd(RED "➜ New alloc failed\n" RESET, 2), NULL);
     }
-	add_alloc(new);
+	add_alloc(&ptrs, new);
 	return (ptr);
 }

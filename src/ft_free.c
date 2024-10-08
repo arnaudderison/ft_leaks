@@ -6,7 +6,7 @@
 /*   By: aderison <aderison@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 01:33:01 by aderison          #+#    #+#             */
-/*   Updated: 2024/10/08 01:47:22 by aderison         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:58:08 by aderison         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void ft_free(void *ptr)
     prev = NULL;
     if (!ptr)
     {
-        ft_putstr_fd(YELLOW "➜ Attempt to free NULL pointer\n" RESET, 2);
+        fct_putstr_fd(YELLOW "➜ Attempt to free NULL pointer\n" RESET, 2);
         return;
     }
 
@@ -44,5 +44,5 @@ void ft_free(void *ptr)
     }
     free(ptr);
     ptr = NULL;
-    ft_putstr_fd(RED "➜ Attempt to free untracked pointer (free success)\n" RESET, 2);
+    fct_putstr_fd(RED "➜ Attempt to free untracked pointer (free success)\n" RESET, 2);
 }

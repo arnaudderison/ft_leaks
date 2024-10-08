@@ -35,8 +35,8 @@ typedef struct s_alloc
 
 extern t_alloc *ptrs;
 
-int	ft_strlen(const char *str);
-int	ft_putstr_fd(const char *str, int fd);
+int	fct_strlen(const char *str);
+int	fct_putstr_fd(const char *str, int fd);
 void ft_putalloc();
 void	*ft_malloc(size_t size, const char *name, int line);
 void ft_free(void *ptr);
