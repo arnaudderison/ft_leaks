@@ -65,7 +65,7 @@ int main()
 {
     char *str;
 
-    str = ft_malloc(10, "ma_chaine", __LINE__);
+    str = ft_malloc(sizeof(char) * (9 + 1), "ma_chaine", __LINE__);
     //init de str
     ft_free(str);
 
