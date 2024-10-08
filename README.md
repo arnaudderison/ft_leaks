@@ -5,6 +5,8 @@
 **This module does not comply with standard 42 because it uses a global variable.**  
 It is intended solely as a development tool and should not be included in your final renderings.
 
+If you have any questions I'm available on slack under the username aderison (intra 42)
+
 ## 📚 Description
 
 ft_malloc is a module designed to help École 42 students detect and understand memory leaks in their C projects. It offers a simple, educational alternative to more complex tools like Valgrind, while remaining accessible to beginners.
