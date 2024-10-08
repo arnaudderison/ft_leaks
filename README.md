@@ -34,11 +34,26 @@ The main objective of ft_leaks is to :
 4. At the end of the program, any allocation not freed is considered a potential leak.
 
 ## 📋 Use
+1. make
+2. Include “ft_leaks.h” in your source files.
+3. Replace all calls to `malloc()` with `ft_malloc(size, “name”, __LINE__)`.
+4. Replace all calls to `free()` with `ft_free()`.
+5. Compile your program with `gcc -o prog src/main.c -L. -lft_leaks -I./include`. With this architecture, you can modify the compilation command to suit your needs.
 
-1. Include “ft_leaks.h” in your source files.
-2. Replace all calls to `malloc()` with `ft_malloc(size, “name”, __LINE__)`.
-3. Replace all calls to `free()` with `ft_free()`.
-4. Compile your program with ft_leaks.c.
+```.
+├── Makefile
+├── include
+│   └── ft_leaks.h
+└── src
+    ├── ft_free.c
+    ├── ft_leaks.c
+    ├── ft_malloc.c
+    ├── ft_putalloc.c
+    ├── main.c
+    └── utils
+        ├── ft_putstr.c
+        └── ft_strlen.c
+```
 Exemple :
 
 ```c
